@@ -1,6 +1,7 @@
-FROM codello/lilypond
+FROM debian:10
 
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -yq \
+  lilypond \
   texlive \
   texlive-latex-base \
   texlive-latex-recommended \
@@ -15,7 +16,7 @@ RUN apt-get update && apt-get install -y \
 
 RUN pip3 install patacrep
 
-RUN python --version && \
+RUN python3 --version && \
     lualatex --version && \
     lilypond --version && \
     songbook --version 
