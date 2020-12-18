@@ -3,6 +3,7 @@ FROM debian:10
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -yq \
   lilypond \
   texlive \
+  texlive-extra-utils \
   texlive-latex-base \
   texlive-latex-recommended \
   texlive-latex-extra \
